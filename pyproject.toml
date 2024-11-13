@@ -1,0 +1,30 @@
+[project]
+authors = [{name = "Matt Koski", email = "maccam912@gmail.com"}]
+dependencies = [ "openai-whisper>=20240930,<20240931", "textual>=0.85.2,<0.86", "pyaudio>=0.2.14,<0.3"]
+description = "Add a short description here"
+name = "pa"
+requires-python = ">=3.9,<3.10"
+version = "0.1.0"
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.pixi.project]
+channels = ["nvidia", "pytorch", "conda-forge"]
+platforms = ["win-64"]
+
+[tool.pixi.pypi-dependencies]
+pa = { path = ".", editable = true }
+
+[tool.pixi.system-requirements]
+cuda = "12.4"
+
+[tool.pixi.tasks]
+
+[tool.pixi.dependencies]
+python = "3.9.*"
+numpy = ">=2.0.2,<3"
+cmake = ">=3.30.5,<4"
+pytorch = ">=2.5.1,<3"
+torchaudio = ">=2.5.1,<3"
